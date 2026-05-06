@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioIgreja — MAMUTE PRIME - SOLIÇÕES EM TI</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&display=swap">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-image: url('images/fundo-bk.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            max-width: 620px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* HEADER */
+        .header {
+            padding: 36px 32px 28px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            width: 200px;
+            max-width: 80%;
+            display: block;
+            margin: 0 auto 16px;
+        }
+
+        .header-divider {
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #667eea, transparent);
+            margin: 0 auto 14px;
+        }
+
+        .header p {
+            color: #888;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        /* SEÇÕES */
+        .section {
+            padding: 28px 32px;
+        }
+
+        .section-title {
+            font-family: serif;
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: #667eea;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        /* CARDS PARÓQUIAS */
+        .parish-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            border-radius: 12px;
+            background: #f8f9ff;
+            border: 1px solid #e8ecff;
+            margin-bottom: 12px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .parish-card:last-child { margin-bottom: 0; }
+
+        .parish-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102,126,234,0.15);
+        }
+
+        .parish-info h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .parish-info p {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .btn-listen {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        /* DIVIDER */
+        .divider {
+            height: 1px;
+            background: #eee;
+            margin: 0 32px;
+        }
+
+        /* CONTATO */
+        .contato-grid {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .contato-item {
+            flex: 1;
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            border-radius: 10px;
+            background: #f8f9ff;
+            border: 1px solid #e8ecff;
+            text-decoration: none;
+            color: #333;
+            font-size: 13px;
+            font-weight: 700;
+            transition: background 0.2s;
+        }
+
+        .contato-item:hover { background: #eef0ff; }
+        .contato-icon { font-size: 20px; flex-shrink: 0; }
+
+        .contato-item small {
+            display: block;
+            font-weight: 300;
+            color: #888;
+            font-size: 11px;
+            margin-top: 2px;
+        }
+
+        /* POLÍTICAS */
+        .politicas {
+            background: #fafafa;
+            border-top: 1px solid #eee;
+            padding: 28px 32px;
+        }
+
+        .politica-bloco { margin-bottom: 24px; }
+        .politica-bloco:last-child { margin-bottom: 0; }
+
+        .politica-titulo {
+            font-family: serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #667eea;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .politica-bloco p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 24px 32px;
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        footer strong {
+            color: white;
+            font-size: 13px;
+        }
+
+        footer .cnpj-info {
+            margin-top: 8px;
+            font-size: 11px;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 16px 12px; }
+            .section { padding: 22px 20px; }
+            .header { padding: 28px 20px 22px; }
+            .politicas { padding: 22px 20px; }
+            footer { padding: 20px; }
+            .parish-card { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .btn-listen { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <img src="images/logo-mamute.png" alt="MAMUTE AudioIgreja" class="logo">
+        <div class="header-divider"></div>
+        <p>AUDIOIGREJA </br>  MAMUTE PRIME — SOLUÇÕES EM TI</p>
+    </div>
+
+
+<!-- CONTATO -->
+    <div class="section">
+        <p class="section-title">📞 Contato & Suporte</p>
+        <div class="contato-grid">
+            <a href="https://wa.me/5575988073965" class="contato-item" target="_blank">
+                <span class="contato-icon">💬</span>
+                <div>
+                    WhatsApp
+                    <small>(75) 98807-3965</small>
+                </div>
+            </a>
+            <a href="mailto:mamute@audioigreja.com.br" class="contato-item">
+                <span class="contato-icon">✉️</span>
+                <div>
+                    E-mail
+                    <small>mamute@audioigreja.com.br</small>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+    
+
+    <!-- POLÍTICAS -->
+    <div class="politicas">
+
+        <div class="politica-bloco">
+            <p class="politica-titulo">🔒 Sobre</p>
+            <p>O AudioIgreja não coleta dados pessoais dos ouvintes. O acesso às transmissões é público e anônimo. Não utilizamos cookies de rastreamento, não compartilhamos informações com terceiros e não armazenamos histórico de acesso. Eventuais dados de contato fornecidos voluntariamente são utilizados exclusivamente para suporte técnico e nunca repassados a terceiros.</p>
+        </div>
+
+        <div class="politica-bloco">
+            <p class="politica-titulo">🔒 Política de Privacidade</p>
+            <p>O AudioIgreja não coleta dados pessoais dos ouvintes. O acesso às transmissões é público e anônimo. Não utilizamos cookies de rastreamento, não compartilhamos informações com terceiros e não armazenamos histórico de acesso. Eventuais dados de contato fornecidos voluntariamente são utilizados exclusivamente para suporte técnico e nunca repassados a terceiros.</p>
+        </div>
+
+        <div class="politica-bloco">
+            <p class="politica-titulo">📋 Termos de Uso</p>
+            <p>O serviço AudioIgreja destina-se exclusivamente à transmissão de celebrações religiosas das paróquias atendidas. É proibida a reprodução, redistribuição ou uso comercial do conteúdo transmitido sem autorização prévia. O serviço pode ser interrompido temporariamente para manutenção sem aviso prévio. O uso do serviço implica na aceitação destes termos.</p>
+        </div>
+
+    </div>
+
+
+
+    <!-- PARÓQUIAS -->
+    <div class="section">
+        <p class="section-title">🎵 Ouça ao Vivo</p>
+
+        <a href="https://catedral-pa.audioigreja.com.br" class="parish-card" target="_blank">
+            <div class="parish-info">
+                <h3>Catedral N. Sª de Fátima</h3>
+                <p>📍 Paulo Afonso - BA</p>
+            </div>
+            <span class="btn-listen">▶ Ouvir</span>
+        </a>
+
+        <a href="https://rosamistica-jere.audioigreja.com.br" class="parish-card" target="_blank">
+            <div class="parish-info">
+                <h3>Paróquia N. Sª Rosa Mística</h3>
+                <p>📍 Jeremoabo - BA</p>
+            </div>
+            <span class="btn-listen">▶ Ouvir</span>
+        </a>
+
+        <a href="https://saojoao-caxias.audioigreja.com.br" class="parish-card" target="_blank">
+            <div class="parish-info">
+                <h3>Paróquia São João Batista e Santa Teresinha</h3>
+                <p>📍 Caxias do Maranhão - MA</p>
+            </div>
+            <span class="btn-listen">▶ Ouvir</span>
+        </a>
+    </div>
+
+    <div class="divider"></div>
+
+    
+
+    <!-- FOOTER -->
+    <footer>
+	<strong><p>AUDIOIGREJA </br>  MAMUTE PRIME — SOLUÇÕES EM TI</p></strong>
+        <div class="cnpj-info">
+            	Paulo Fernando Alcantara da Silva Junior<br>
+		    CNPJ: 65.881.871/0001-07<br>
+            	Travessa B — Alves de Souza,</br>  Paulo Afonso - BA · CEP 48608-335<br>
+            © 2026 · Todos os direitos reservados
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>
